@@ -10,7 +10,7 @@ response_url = requests.get(url)
 content_res = response_url.content
 soup = BeautifulSoup(content_res, "lxml")
 data_class = soup.find_all("div",attrs={"class":"_4ddWXP"})
-#print(data_class)
+
 
 output = []
 for data in data_class:
@@ -36,7 +36,7 @@ for data in data_class:
     output_rows = [product_name,product_prices,product_discount,product_quantity]
     output.append(output_rows)
     
-    #print(data)
+    
             
 path = "C:/Users/Ḥ/aditya/flipkart_data_excel/filpdata.xlsx"       
 Grocery = pd.DataFrame(output,columns=columns)
